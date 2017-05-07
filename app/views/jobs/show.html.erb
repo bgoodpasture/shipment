@@ -1,1 +1,20 @@
-show job 
+<h2>Current Job</h2>
+<p>
+  <strong>Description: </strong><%= @job.description%>
+</p>
+
+<p>
+  <strong>Starting port: </strong> <%= @job.origin%>
+</p>
+
+<p>
+  <strong>Ending port: </strong><%= @job.destination%>
+</p>
+
+<p>
+  <strong>Container count: </strong><%= @job.containerCount%>
+</p>
+
+<p>
+  <strong>Cost: </strong>$<%= @job.cost%>
+</p>

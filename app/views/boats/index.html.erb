@@ -1,0 +1,7 @@
+all Boats
+
+<% @boats.each do |boats| %>
+  <ol>
+    <li><%= link_to"#{boats.name}", edit_boat_path(boats) %></li>
+  </ol>
+<% end %>

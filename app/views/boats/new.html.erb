@@ -1,0 +1,34 @@
+new boat
+
+<%= form_for :boat, url: boats_path do |boat| %>
+  <% if @boat.errors.any? %>
+    <div id="error_explanition">
+      <h2>
+        <%= pluralize(boat.errors.count, "error") %>
+        prevented this boat from being saved:
+      </h2>
+      <ul>
+        <% @boat.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%=boat.text_field :name, :placeholder =>
+    "name"%>
+  </p>
+  <p>
+    <%= boat.label "Location" %>
+    <%= boat.select :location, [["Long Beach"],["Seattle"],["Honolulu"]], :placeholder => "origin" %>
+  </p>
+  <p>
+
+    <%= boat.number_field :containers, :placeholder => "Max containers" %>
+  </p>
+
+  <p>
+    <%= boat.submit "Create boat" %>
+  </p>
+<% end %>

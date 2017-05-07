@@ -1,1 +1,42 @@
 edit job
+
+<%= form_for (@job) do |job| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanition">
+      <h2>
+        <%= pluralize(job.errors.count, "error") %>
+        prevented this job from being saved:
+      </h2>
+      <ul>
+        <% @job.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%=job.text_area :description, :placeholder =>
+    "description"%>
+  </p>
+  <p>
+    <%= job.label "starting port" %>
+    <%= job.select :origin, [["Long Beach"],["Seattle"],["Honolulu"]] %>
+  </p>
+  <p>
+    <%= job.label "ending port" %>
+    <%= job.select :destination, [["Long Beach"],["Seattle"],["Honolulu"]] %>
+  </p>
+  <p>
+    <%= job.label "container count" %>
+    <%= job.number_field :containerCount, :placeholder => "total containers" %>
+  </p>
+  <p>
+    <%= job.label "job cost" %>
+    <%= job.number_field :cost, :placeholder => "job cost", step: :any %>
+  </p>
+
+  <p>
+    <%= job.submit "Update Job" %>
+  </p>
+<% end %>
