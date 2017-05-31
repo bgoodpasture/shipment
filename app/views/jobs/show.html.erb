@@ -1,4 +1,9 @@
 <h2>Current Job</h2>
+
+<p>
+  <strong>Job name: </strong><%= @job.jobName%>
+</p>
+
 <p>
   <strong>Description: </strong><%= @job.description%>
 </p>
@@ -17,4 +22,15 @@
 
 <p>
   <strong>Cost: </strong>$<%= @job.cost%>
+</p>
+
+<p>
+  <% @boats.each do |boats| %>
+  <%= boats.name %>
+  <%end%>
+</p>
+
+<p>
+<%= link_to 'Edit Job', edit_job_path, :class => 'navbar-link' %> |
+<%= link_to "Delete Job", job_path, method: :delete %>
 </p>

@@ -10,3 +10,8 @@
 <p>
   <strong>Max containers: </strong><%= @boat.containers%>
 </p>
+
+<p>
+<%= link_to 'Edit Boat', edit_boat_path, :class => 'navbar-link' %> |
+<%= link_to "Delete Boat", boat_path, method: :delete %>
+</p>

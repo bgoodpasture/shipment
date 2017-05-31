@@ -6,7 +6,6 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
-
   end
 
   def create
@@ -24,6 +23,7 @@ class JobsController < ApplicationController
 
   def update
     @job = Job.find(params[:id])
+    puts(params[:id])
     if@job = Job.update(job_params)
       redirect_to job_path(@job)
     else
@@ -33,10 +33,11 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @boats = Boat.find(@job.boat_ids)
   end
 
   private
   def job_params
-    params.require(:job).permit(:description, :origin, :destination, :cost, :containerCount)
+    params.require(:job).permit(:jobName,:description, :origin, :destination, :cost, :containerCount, boat_ids:[])
   end
 end

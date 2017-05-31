@@ -1,6 +1,6 @@
 new boat
 
-<%= form_for :boat, url: boats_path do |boat| %>
+<%= form_for :boat, url: boats_path, :html => { :multipart => true } do |boat| %>
   <% if @boat.errors.any? %>
     <div id="error_explanition">
       <h2>

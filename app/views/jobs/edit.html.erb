@@ -16,6 +16,10 @@ edit job
   <% end %>
 
   <p>
+    <%=job.text_field :jobName, :placeholder =>
+    "Job name"%>
+  </p>
+  <p>
     <%=job.text_area :description, :placeholder =>
     "description"%>
   </p>
@@ -34,6 +38,14 @@ edit job
   <p>
     <%= job.label "job cost" %>
     <%= job.number_field :cost, :placeholder => "job cost", step: :any %>
+  </p>
+
+  <p>
+    <%=job.label "add boats" %>
+  </p>
+
+  <p>
+    <%=job.collection_check_boxes :boat_ids, Boat.all, :id, :name %>
   </p>
 
   <p>

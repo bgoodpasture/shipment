@@ -1,7 +1,11 @@
-all Jobs
+<%= link_to"New Job", new_job_path %></li>
+
+<h2>
+All Jobs
+</h2>
 
 <% @jobs.each do |jobs| %>
   <ol>
-    <li><%= link_to"#{jobs.description}", edit_job_path(jobs) %></li>
+    <li><%= link_to"#{jobs.jobName}", edit_job_path(jobs) %></li>
   </ol>
 <% end %>
