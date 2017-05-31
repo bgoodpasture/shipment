@@ -1,6 +1,7 @@
 new boat
 
 <%= form_for :boat, url: boats_path, :html => { :multipart => true } do |boat| %>
+<%= boat.file_field :avatar %>
   <% if @boat.errors.any? %>
     <div id="error_explanition">
       <h2>
@@ -19,6 +20,7 @@ new boat
     <%=boat.text_field :name, :placeholder =>
     "name"%>
   </p>
+
   <p>
     <%= boat.label "Location" %>
     <%= boat.select :location, [["Long Beach"],["Seattle"],["Honolulu"]], :placeholder => "origin" %>

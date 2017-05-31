@@ -1,6 +1,6 @@
 edit boat
-
 <%= form_for (@boat) do |boat| %>
+<%= boat.file_field :avatar %> 
   <% if @boat.errors.any? %>
     <div id="error_explanition">
       <h2>
