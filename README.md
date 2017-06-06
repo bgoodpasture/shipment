@@ -1,11 +1,10 @@
-# README
+# Shipment App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+this app shows how to create ships and jobs and how to assign the jobs to various ships. 
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.4.0
 
 * System dependencies
 
