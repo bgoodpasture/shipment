@@ -1,4 +1,4 @@
-# Shipment App
+# Shipment
 
 this app shows how to create ships and jobs and how to assign the jobs to various ships. 
 
